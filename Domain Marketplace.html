@@ -432,7 +432,8 @@ form.addEventListener('submit', async e => {
     document.getElementById('formContent').style.display = 'none';
     document.getElementById('successContent').style.display = 'block';
   } catch (err) {
-    status.textContent = "L'envoi a échoué. Réessayez ou écrivez-nous à contact@liveydream.com.";
+    console.error('FormSubmit :', err.message);
+    status.textContent = "L'envoi a échoué (" + err.message + "). Réessayez ou écrivez-nous à contact@liveydream.com.";
     status.classList.add('show');
   } finally {
     submitBtn.disabled = false;
